@@ -9,12 +9,23 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import com.example.holamundo.model.Alumno;
+
+import java.util.Date;
+
 public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_main);//controlador vas a controlar esta vista
+        //llamando a nuestro modelo
+        final Alumno alumno = new Alumno();
+        alumno.setNombre("Jery Ramirez");
+        alumno.setFechaNacimiento(new Date());
+        alumno.setNumero_cuenta(1234567);
+
+
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
@@ -22,7 +33,7 @@ public class MainActivity extends AppCompatActivity {
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                Snackbar.make(view, "Nombre Alumno: "+ alumno.getNombre(), Snackbar.LENGTH_LONG)
                         .setAction("Action", null).show();
             }
         });

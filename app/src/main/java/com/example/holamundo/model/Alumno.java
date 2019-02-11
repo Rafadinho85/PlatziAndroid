@@ -1,4 +1,4 @@
-package com.example.holamundo;
+package com.example.holamundo.model;
 
 import java.util.Date;
 
