@@ -8,6 +8,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.EditText;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import com.example.holamundo.model.Alumno;
 
@@ -37,7 +40,24 @@ public class MainActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
+
+
+
     }
+    //creamos un nuevo metodo que recibira nuestra boton
+    //si queremos que funcione nuestro metodo tenemos que pasarle un objeto view
+    public void enviarDatos(View view){
+
+        EditText edtNombre = (EditText) findViewById(R.id.nombre);
+        String nombre = edtNombre.getText().toString();
+
+        Toast.makeText(getBaseContext(), "Felicidades tu nombre es: "+nombre,Toast.LENGTH_LONG).show();
+
+    }
+
+
+
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
